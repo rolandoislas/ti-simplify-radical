@@ -1,0 +1,56 @@
+ClrHome
+Disp "Simplify Radical"
+Disp "Expected format:"
+Disp "Exclude radix"
+Disp "(a√b + c√d)"
+Disp "(e√f + g√h)"
+
+" Main parameters
+Input "A:",A
+Input "B:",B
+Input "C:",C
+Input "D:",D
+Input "E:",E
+Input "F:",F
+Input "G:",G
+Input "H:",H
+
+" First
+A*E→I
+B*F→J
+" Outside
+A*G→K
+B*H→L
+" Inside
+C*E→M
+D*F→N
+" Last
+C*G→O
+D*H→P
+
+AxesOff
+ClrDraw
+
+If fPart(√(J))=0:Then
+Text(1,1,√(J)*I)
+Else
+Text(1,1,I,"√",J)
+End
+
+If fPart(√(L))=0:Then
+Text(10,1,√(L)*K)
+Else
+Text(10,1,K,"√",L)
+End
+
+If fPart(√(N))=0:Then
+Text(20,1,√(N)*M)
+Else
+Text(20,1,M,"√",N)
+End
+
+If fPart(√(P))=0:Then
+Text(30,1,√(P)*O)
+Else
+Text(30,1,O,"√",P)
+End
